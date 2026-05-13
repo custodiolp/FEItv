@@ -1,0 +1,6 @@
+1;Círculo de Fogo;Ação;2
+2;Transformers;Ficção Científica;0
+3;Invocação do Mal 3;Terror;0
+4;Como Mágica;Fantasia;0
+5;Rei Leão;Animação;0
+6;Velozes e Furiosos;Ação;0
