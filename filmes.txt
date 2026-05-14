@@ -3,4 +3,4 @@
 3;Invocação do Mal 3;Terror;0
 4;Como Mágica;Fantasia;0
 5;Rei Leão;Animação;0
-6;Velozes e Furiosos;Ação;0
+6;Velozes e Furiosos;Ação;1

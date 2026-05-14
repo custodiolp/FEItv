@@ -1,2 +1,3 @@
 lipe@gmail.com;1
 fulano@gmail.com;1
+lipe@gmail.com;6
