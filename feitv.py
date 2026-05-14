@@ -69,57 +69,39 @@ def carregar_dados():
     # usuários
 
     with open(ARQUIVO_USUARIOS, "r") as arquivo:
-
         for linha in arquivo:
-
             dados = linha.strip().split(";")
-
             if len(dados) == 3:
-
                 usuarios.append(dados)
 
     # filmes
 
     with open(ARQUIVO_FILMES, "r") as arquivo:
-
         for linha in arquivo:
-
             dados = linha.strip().split(";")
-
             if len(dados) == 4:
-
                 filmes.append(dados)
 
   
 
     if len(filmes) == 0:
-
         filmes.extend(FILMES_PADRAO)
-
         salvar_filmes()
 
     # curtidas
 
     with open(ARQUIVO_CURTIDAS, "r") as arquivo:
-
         for linha in arquivo:
-
             dados = linha.strip().split(";")
-
             if len(dados) == 2:
-
                 curtidas.append(dados)
 
     # favoritos
 
     with open(ARQUIVO_FAVORITOS, "r") as arquivo:
-
         for linha in arquivo:
-
             dados = linha.strip().split(";")
-
             if len(dados) == 2:
-
                 favoritos.append(dados)
 
 
@@ -127,11 +109,8 @@ def carregar_dados():
 
 
 def salvar_usuarios():
-
     with open(ARQUIVO_USUARIOS, "w") as arquivo:
-
         for usuario in usuarios:
-
             arquivo.write(";".join(usuario) + "\n")
 
 
@@ -139,11 +118,8 @@ def salvar_usuarios():
 
 
 def salvar_filmes():
-
     with open(ARQUIVO_FILMES, "w") as arquivo:
-
         for filme in filmes:
-
             arquivo.write(";".join(filme) + "\n")
 
 
@@ -151,11 +127,8 @@ def salvar_filmes():
 
 
 def salvar_curtidas():
-
     with open(ARQUIVO_CURTIDAS, "w") as arquivo:
-
         for curtida in curtidas:
-
             arquivo.write(";".join(curtida) + "\n")
 
 
@@ -163,11 +136,8 @@ def salvar_curtidas():
 
 
 def salvar_favoritos():
-
     with open(ARQUIVO_FAVORITOS, "w") as arquivo:
-
         for favorito in favoritos:
-
             arquivo.write(";".join(favorito) + "\n")
 
 
@@ -189,7 +159,6 @@ def logo():
 def menu_inicial():
 
     while True:
-
         print("\n1 - Cadastrar usuário")
         print("2 - Fazer login")
         print("0 - Sair")
@@ -197,24 +166,19 @@ def menu_inicial():
         opcao = input("\nEscolha uma opção: ")
 
         if opcao == "1":
-
             cadastrar_usuario()
 
         elif opcao == "2":
-
             usuario = login()
 
             if usuario:
-
                 menu_usuario(usuario)
 
         elif opcao == "0":
-
             print("\nSistema encerrado!")
             break
 
         else:
-
             print("\nDigite uma opção válida!")
 
 
@@ -222,13 +186,11 @@ def menu_inicial():
 
 
 def cadastrar_usuario():
-
     print("\n===== CADASTRO =====")
 
     nome = input("Digite seu nome: ")
 
     while True:
-
         email = input("Digite seu email: ")
 
         if "@" in email:
@@ -251,7 +213,6 @@ def cadastrar_usuario():
     for usuario in usuarios:
 
         if usuario[1] == email:
-
             print("\nEsse email já está cadastrado!")
             return
 
@@ -266,7 +227,6 @@ def cadastrar_usuario():
 
 
 def login():
-
     print("\n===== LOGIN =====")
 
     email = input("Digite seu email: ")
@@ -275,7 +235,6 @@ def login():
     for usuario in usuarios:
 
         if usuario[1] == email and usuario[2] == senha:
-
             print(f"\nBem-vindo(a), {usuario[0]}!")
             return usuario
 
@@ -304,40 +263,31 @@ def menu_usuario(usuario):
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
-
             listar_filmes()
 
         elif opcao == "2":
-
             buscar_filme()
 
         elif opcao == "3":
-
             curtir_filme(usuario)
 
         elif opcao == "4":
-
             descurtir_filme(usuario)
 
         elif opcao == "5":
-
             adicionar_favorito(usuario)
 
         elif opcao == "6":
-
             remover_favorito(usuario)
 
         elif opcao == "7":
-
             ver_favoritos(usuario)
 
         elif opcao == "0":
-
             print("\nLogout realizado!")
             break
 
         else:
-
             print("\nDigite uma opção válida!")
 
 
@@ -402,7 +352,6 @@ def curtir_filme(usuario):
     for curtida in curtidas:
 
         if curtida[0] == usuario[1] and curtida[1] == id_filme:
-
             print("\nVocê já curtiu esse filme!")
             return
 
